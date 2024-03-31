@@ -1,19 +1,14 @@
-function Feedback({ feedbackTypes, totalFeedback }) {
-  const good = feedbackTypes.good;
-  const neutral = feedbackTypes.neutral;
-  const bad = feedbackTypes.bad;
 
-  const positivePercentage = totalFeedback === 0 ? 0 : Math.round((good / totalFeedback) * 100);
 
+const Feedback = ({ feedbackTypes, totalFeedback, positivePercentage }) => {
   return (
-    <div>
-      <ul>
-        <li>Good: {good}</li>
-        <li>Neutral: {neutral}</li>
-        <li>Bad: {bad}</li>
-        <li>Total: {totalFeedback}</li>
-        <li>Positive: {positivePercentage}%</li>
-      </ul>
+    <div className="feedback-container">
+      <h2>Feedback Summary</h2>
+      <p>Total Feedback: {totalFeedback}</p>
+      <p>Good: {feedbackTypes.good}</p>
+      <p>Neutral: {feedbackTypes.neutral}</p>
+      <p>Bad: {feedbackTypes.bad}</p>
+      <p>Positive Percentage: {positivePercentage}%</p>
     </div>
   );
 }

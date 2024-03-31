@@ -1,23 +1,11 @@
-import { useState } from 'react'
-import './App.css';
-import Feedback from './Feedback';
-import Options from './Options';
+// Description.jsx
 
-function App() {
-  const [feedbackTypes, setFeedbackTypes] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0
-  });
-
+const Description = () => {
   return (
-    <div className="App">
-      <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
-      <Feedback feedbackTypes={feedbackTypes} />
-      <Options setFeedbackTypes={setFeedbackTypes} />
+    <div>
+      <p>This is the description of Sip Happens Café. Please leave your feedback about our service by selecting one of the options below.</p>
     </div>
   );
 }
 
-export default App;
+export default Description;

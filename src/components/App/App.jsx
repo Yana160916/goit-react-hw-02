@@ -1,8 +1,10 @@
+
 import { useState, useEffect } from 'react';
 import './App.css';
 import Feedback from '../Feedback/Feedback.jsx';
-import Options from '../Option/Options.jsx';
+import Options from '../Options/Options.jsx';
 import Notification from '../Notification/Notification.jsx';
+import Description from '../Description/Description.jsx'; 
 
 function App() {
   const [feedbackTypes, setFeedbackTypes] = useState({
@@ -43,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
+      <Description /> {/* Включіть компонент Description */}
       <div className="options-container">
         <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} resetFeedback={resetFeedback} />
       </div>
