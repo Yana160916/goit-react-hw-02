@@ -45,12 +45,13 @@ function App() {
   return (
     <div className="App">
       <h1>Sip Happens Café</h1>
-      <Description /> {/* Включіть компонент Description */}
+      <Description />
       <div className="options-container">
         <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} resetFeedback={resetFeedback} />
       </div>
-      <Feedback feedbackTypes={feedbackTypes} totalFeedback={totalFeedback} positivePercentage={positivePercentage} />
-      {totalFeedback === 0 && (
+      {totalFeedback > 0 ? (
+        <Feedback feedbackTypes={feedbackTypes} totalFeedback={totalFeedback} positivePercentage={positivePercentage} />
+      ) : (
         <Notification message="No feedback collected yet." />
       )}
     </div>
